@@ -8,3 +8,10 @@ RUN apt-get update && eatmydata apt-get install make gcc libc6-dev libncurses5-d
     --no-install-recommends -y && rm -rf /var/lib/apt
 
 RUN pip3 install awscli breathe==4.6.0 sphinx==1.5.5 sphinx_rtd_theme junit2html git+https://github.com/zephyriot/gitlint.git
+
+ENV SDK_VERSION 0.9.2
+
+RUN wget --quiet https://github.com/zephyrproject-rtos/meta-zephyr-sdk/releases/download/${SDK_VERSION}/zephyr-sdk-${SDK_VERSION}-setup.run \
+ && chmod +x zephyr-sdk-${SDK_VERSION}-setup.run \
+ && ./zephyr-sdk-${SDK_VERSION}-setup.run --quiet -- -d /opt/sdk/zephyr-sdk-${SDK_VERSION} \
+ && rm zephyr-sdk-${SDK_VERSION}-setup.run
