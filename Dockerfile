@@ -7,6 +7,9 @@ RUN apt-get update && eatmydata apt-get install make gcc libc6-dev libncurses5-d
     python3-pyelftools wget xz-utils \
     --no-install-recommends -y && rm -rf /var/lib/apt
 
+RUN apt-get update && eatmydata apt-get install cmake cmake-curses-gui -t stretch-backports \
+    --no-install-recommends -y && rm -rf /var/lib/apt
+
 RUN pip3 install awscli breathe==4.6.0 sphinx==1.5.5 sphinx_rtd_theme junit2html git+https://github.com/zephyriot/gitlint.git
 
 ENV SDK_VERSION 0.9.2
