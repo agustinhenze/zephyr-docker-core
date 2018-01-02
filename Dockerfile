@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM debian:stretch-backports
 
 RUN apt-get update && apt-get install eatmydata -y && rm -rf /var/lib/apt
 
