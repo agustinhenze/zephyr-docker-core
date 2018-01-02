@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install eatmydata -y && rm -rf /var/lib/apt
 
 RUN apt-get update && eatmydata apt-get install make gcc libc6-dev libncurses5-dev clang-3.9 lldb-3.9 sudo \
     python3-yaml python3-ply python3-pip python3-setuptools python3-wheel ccache doxygen device-tree-compiler git \
-    python3-pyelftools wget xz-utils \
+    python3-pyelftools wget xz-utils gperf bash-completion \
     --no-install-recommends -y && rm -rf /var/lib/apt
 
 RUN apt-get update && eatmydata apt-get install cmake cmake-curses-gui -t stretch-backports \
